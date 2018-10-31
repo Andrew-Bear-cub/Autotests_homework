@@ -2,10 +2,7 @@
  * @author Andrey makarov, Aplana
  */
 
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,32 +12,12 @@ import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @see Homework_task_1 Класс в котором мы пишем наш тест
+ * @see Test_Homework_task_1 Класс в котором мы пишем наш тест
  * -driver - объявили переменную driver типа WebDriver в которой будет храниться драйвер нашего браузера;
  * -baseUrl - объявили переменную baseUrl типа String в которой будет хранится ссылка на тестируемый сайт;
  */
-public class Homework_task_1 {
-    WebDriver driver;
-    String baseUrl;
+public class Test_Homework_task_1 extends BaseTest {
 
-    /**
-     * @see #beforeTest устанавливаем значения переменных и выполняем действия, которые будут выполнятся перед запуском
-     * каждлого теста:
-     * -инициализируем переменную baseUrl адресом, на который надо перейти в начале теста;
-     * -инициализируем переменную driver и создаем новый экземпляр драйвеера для браузера google chrome;
-     * -implicityWait() - время ожидания загрузки страницы для драйвера (единожды для каждого экземпляра драйвера);
-     * -maximize()- разворачиваем окно браузера на весь экран
-     * -get() - переходим на указанную в переменной baseUrl ссылку.
-     */
-    @Before
-    public void beforeTest() {
-        System.setProperty("webdriver.chrome.driver", "drv/chromedriver.exe");
-        baseUrl = "http://www.sberbank.ru/ru/person";
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
-        driver.get(baseUrl);
-    }
 
     /**
      * @see #sberIsuranceTest() непосредственно запуск теста:
@@ -48,7 +25,10 @@ public class Homework_task_1 {
      * -Assert - предположение о чем-либо
      */
     @Test
+    @Ignore
     public void sberIsuranceTest() {
+        //Переходим по ссылке
+        driver.get(baseUrl);
 
         //находим на старнице элемент страхование, кликаем на него
         driver.findElement(By.xpath("//span[contains(text(), 'Страхование')]")).click();
@@ -64,7 +44,7 @@ public class Homework_task_1 {
 
         //Находим на странице кнопку Оформить онлайн. Т.к. их две одинаковых, а отличаются только ссылками, на которые
         //они ведут - искал по икспасу через ссылку. И нажимаем на нее.
-        driver.findElement(By.xpath("//a[@href='https://online.sberbankins.ru/store/vzr/index.html']")).click();
+        driver.findElement(By.xpath("//div[@data-pid='SBRF_ColList_sb_bundle-9624889']//*/p[@class='kit-button kit-button_color_green kit-button_size_m']")).click();
 
         /*Т.к.  форма открывается в новой вкладке - перейдем на нее. Создадим массив в который загоним имена вкладок
         и перейдем на вторую.*/
@@ -127,24 +107,5 @@ public class Homework_task_1 {
         //Проверяем наличие сообщения об ошибке
         Assert.assertEquals("Заполнены не все обязательные поля",
                 driver.findElement(By.xpath("//div[text()='Заполнены не все обязательные поля']")).getText());
-    }
-
-    /**
-     * @param locator локатор по которому мы ищем текстовое поле куда будем вводить текст
-     * @param value   набор символов который будем вводить в текстовое поле
-     * @see #fillField(By, String) - метод для заполнения текстовых полей.
-     */
-    public void fillField(By locator, String value) {
-        driver.findElement(locator).clear();
-        driver.findElement(locator).sendKeys(value);
-    }
-
-    /**
-     * @see #afterTest() мероприятия, выполняемые после завершения теста. В данном случае закрытие окна браузера.
-     */
-
-    @After
-    public void afterTest() {
-        driver.quit();
     }
 }
