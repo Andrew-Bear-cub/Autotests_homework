@@ -16,7 +16,7 @@ public class TravelsAndBuysPage {
         PageFactory.initElements(driver, this);
         //Ожидание появления кнопки
         Wait<WebDriver> wait = new WebDriverWait(driver, 5, 1000);
-        wait.until(ExpectedConditions.visibilityOf(sendButton)).click();
+        wait.until(ExpectedConditions.visibilityOf(sendButton));
 
     }
 }
