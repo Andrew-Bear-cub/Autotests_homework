@@ -2,21 +2,19 @@
  * @author Andrey makarov, Aplana
  */
 
+import Steps.BaseSteps;
 import org.junit.*;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 
 /**
  * @see Test_Homework_task_1 Класс в котором мы пишем наш тест
  * -driver - объявили переменную driver типа WebDriver в которой будет храниться драйвер нашего браузера;
  * -baseUrl - объявили переменную baseUrl типа String в которой будет хранится ссылка на тестируемый сайт;
  */
-public class Test_Homework_task_1 extends BaseTest {
+public class Test_Homework_task_1 extends BaseSteps {
 
 
     /**

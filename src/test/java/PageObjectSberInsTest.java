@@ -1,3 +1,5 @@
+import Steps.BaseSteps;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import pages.MainPage;
@@ -6,10 +8,11 @@ import pages.TravelsAndBuysPage;
 
 import java.util.ArrayList;
 
-public class PageObjectSberInsTest extends BaseTest {
+public class PageObjectSberInsTest extends BaseSteps {
 
     //Переписал тест с использованием PageObject и PageFactory
     @Test
+    @Ignore
     public void newSberInsTest() {
         MainPage mainpage = new MainPage(driver);
         mainpage.selectMainMenu("Страхование");
@@ -24,7 +27,7 @@ public class PageObjectSberInsTest extends BaseTest {
 
         /*Т.к.  форма открывается в новой вкладке - перейдем на нее. Создадим массив в который загоним имена вкладок
         и перейдем на вторую.*/
-        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+        ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(1));
 
         //Создаем новый экземпляр страницы "Страхование путешественников"

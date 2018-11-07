@@ -20,7 +20,7 @@ public class TravelInsurancePage {
     WebElement makeButton;
 
     //Кнопка продолжить, жмется после заполнения полей
-    @FindBy(xpath="//span[@class='b-continue-btn']")
+    @FindBy(xpath = "//span[@class='b-continue-btn']")
     WebElement continueButton;
 
     //Данные застрахованного лица: фамилия
@@ -75,13 +75,17 @@ public class TravelInsurancePage {
     @FindBy(name = "issuePlace")
     WebElement clientPassportIssuePlace;
 
+    //Сообщение об ошибке
+    @FindBy(xpath = "//div[@ng-show='tryNext && myForm.$invalid']")
+    WebElement errorMessage;
+
     //конструктор, без которого не заработает
     public TravelInsurancePage(WebDriver driver) {
         PageFactory.initElements(driver, this);
 
         /*Задаим ожидание появления кнопки "Минимальная" (страница грузится каждый раз по разному, поставил 20 секунд
         чтоб наверняка)*/
-        (new WebDriverWait(driver, 20)).until(ExpectedConditions.visibilityOf(minimumInsuranceButton));
+        //(new WebDriverWait(driver, 20)).until(ExpectedConditions.visibilityOf(minimumInsuranceButton));
     }
 
     /*метод для заполнения полей, передаем имя элемента и значение, внутри вызывается метод заполнения полей по элементу
@@ -172,6 +176,7 @@ public class TravelInsurancePage {
         }
 
     }
+
     //метод для выбора суммы страховки. Тут описан только выбор кнопки "минимальная", но легко переделывается на две
     // остальных через switch
     public void chooseInsSum(String value) {
@@ -193,6 +198,7 @@ public class TravelInsurancePage {
     public void continueButton() {
         continueButton.click();
     }
+
     //метод для заполнения полей, передаем элемент и значение для заполнения
     public void fillField(WebElement element, String value) {
         element.clear();
@@ -216,6 +222,12 @@ public class TravelInsurancePage {
             }
         }
 
+
+        }
+    public void checkErrorMessage (String value){
+        String actualValue = errorMessage.getAttribute("innerHTML");
+        org.junit.Assert.assertTrue("Получено значение: " + actualValue + ", Ожидалось: " + value,
+                actualValue.contains(value));
     }
 }
 
