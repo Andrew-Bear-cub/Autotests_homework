@@ -1,5 +1,6 @@
 package pages;
 
+import Steps.BaseSteps;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,8 +15,9 @@ public class MainPage {
     @FindBy(xpath="//li[@class='lg-menu__item lg-menu__item_hovered']/*//div[@class='kit-col kit-col_lg_5 lg-menu__col']")
     WebElement subMenu;
 
-    public MainPage(WebDriver driver) {
-        PageFactory.initElements(driver, this);
+    public MainPage()
+    {
+        PageFactory.initElements(BaseSteps.getDriver(), this);
     }
 
     public void selectMainMenu(String menuItem) {

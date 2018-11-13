@@ -14,12 +14,12 @@ public class PageObjectSberInsTest extends BaseSteps {
     @Test
     @Ignore
     public void newSberInsTest() {
-        MainPage mainpage = new MainPage(driver);
+        MainPage mainpage = new MainPage();
         mainpage.selectMainMenu("Страхование");
         mainpage.selectSubmenu("Путешествия и покупки");
 
         //Нажимаем на кнопку "Оформить онлайн"
-        new TravelsAndBuysPage(driver).sendButton.click();
+        new TravelsAndBuysPage().sendButton.click();
 
         //Вот тут у меня затык. Я так пониаю, что клика на кнопку здесь открывается новое окно, но не могу придумать,
         // как сделать так, чтобы вновь открываемое окно присвоить переменной для вызова методов со страницы
@@ -31,7 +31,7 @@ public class PageObjectSberInsTest extends BaseSteps {
         driver.switchTo().window(tabs.get(1));
 
         //Создаем новый экземпляр страницы "Страхование путешественников"
-        TravelInsurancePage tip = new TravelInsurancePage(driver);
+        TravelInsurancePage tip = new TravelInsurancePage();
 
         //Выберем минимальную страховку...
         tip.chooseInsSum("Минимальная");

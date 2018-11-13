@@ -11,17 +11,17 @@ public class TravelInsurancePageSteps extends BaseSteps {
 
     @Step("Выбираем сумму страховки")
     public void stepChooseInsSum(String value) {
-        new TravelInsurancePage(driver).chooseInsSum(value);
+        new TravelInsurancePage().chooseInsSum(value);
     }
 
     @Step("Нажимаем кнопку \"Продолжить\" для перехода к заполнению полей")
     public void stepClickMakeButton() {
-        new TravelInsurancePage(driver).makeButton();
+        new TravelInsurancePage().makeButton();
     }
 
     @Step("Поле {0} заполняется значением {1}")
     public void stepFillField(String field, String value) {
-        new TravelInsurancePage(driver).fillField(field, value);
+        new TravelInsurancePage().fillField(field, value);
 
     }
 
@@ -33,16 +33,16 @@ public class TravelInsurancePageSteps extends BaseSteps {
 
     @Step("Выбираем пол страхователя: {0}")
     public void stepChooseClientSex(String sex) {
-        new TravelInsurancePage(driver).chooseSex(sex);
+        new TravelInsurancePage().chooseSex(sex);
     }
 
     @Step("Нажтмаем на кнопку \"Продолжить\" после заполнения полей")
     public void stepClickContinueButton() {
-        new TravelInsurancePage(driver).continueButton();
+        new TravelInsurancePage().continueButton();
     }
 
     @Step("На экране присутствует сообщение об ошибке \"{0}\".")
     public void checkErrorMessageStep(String value) {
-        new TravelInsurancePage(driver).checkErrorMessage(value);
+        new TravelInsurancePage().checkErrorMessage(value);
     }
 }

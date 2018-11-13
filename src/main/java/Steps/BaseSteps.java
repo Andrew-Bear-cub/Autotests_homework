@@ -1,14 +1,14 @@
 package Steps;
 
-import org.junit.AfterClass;
-import org.junit.Assert;
-import org.junit.BeforeClass;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import util.TestProperties;
 
+import java.util.ArrayList;
 import java.util.NoSuchElementException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
@@ -24,7 +24,7 @@ public class BaseSteps {
     public static Properties properties = TestProperties.getinstance().getProperties();
 
     //Выполняется перед всем тестированием
-    @BeforeClass
+    @Before
     public static void setUp() throws Exception {
         /*В обоих случаях тесты будут запускаться в хроме, потому что еще не добавил другие драйверы в проект,
          но на вырост оставил*/
@@ -50,7 +50,7 @@ public class BaseSteps {
     }
 
     //Выполняется после всего тестирования
-    @AfterClass
+    @After
     public static void tearDown() throws Exception {
         //Закрываем окно браузера
         driver.quit();
@@ -87,5 +87,10 @@ public class BaseSteps {
         String actualValue = element.getAttribute("innerHTML");
         org.junit.Assert.assertTrue("Получено значение: " + actualValue + ", Ожидалось: " + value,
                 actualValue.contains(value));
+    }
+    //Метод для перехода на вторую вкладку. Создадим массив в который загоним имена вкладок и перейдем на вторую
+    public void switchTab(){
+        ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(1));
     }
 }

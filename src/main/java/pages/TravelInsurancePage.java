@@ -1,5 +1,6 @@
 package pages;
 
+import Steps.BaseSteps;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -80,8 +81,8 @@ public class TravelInsurancePage {
     WebElement errorMessage;
 
     //конструктор, без которого не заработает
-    public TravelInsurancePage(WebDriver driver) {
-        PageFactory.initElements(driver, this);
+    public TravelInsurancePage() {
+        PageFactory.initElements(BaseSteps.getDriver(), this);
 
         /*Задаим ожидание появления кнопки "Минимальная" (страница грузится каждый раз по разному, поставил 20 секунд
         чтоб наверняка)*/

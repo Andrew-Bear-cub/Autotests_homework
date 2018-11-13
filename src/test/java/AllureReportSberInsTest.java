@@ -2,6 +2,7 @@ import Steps.BaseSteps;
 import Steps.MainPageSteps;
 import Steps.TravelInsurancePageSteps;
 import Steps.TravelsAndBuysPageSteps;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import ru.yandex.qatools.allure.annotations.Title;
@@ -44,10 +45,8 @@ public class AllureReportSberInsTest extends BaseSteps {
         //Нажимаем кнопку оформить онлайн
         tabpSteps.stepTABPButton();
 
-        /*Т.к.  форма открывается в новой вкладке - перейдем на нее. Создадим массив в который загоним имена вкладок
-        и перейдем на вторую.*/
-        ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
-        driver.switchTo().window(tabs.get(1));
+        //Т.к.  форма открывается в новой вкладке - перейдем на нее.
+        switchTab();
 
         TravelInsurancePageSteps tipSteps = new TravelInsurancePageSteps();
 

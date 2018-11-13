@@ -14,14 +14,14 @@ public class MainPageSteps extends BaseSteps{
 
     public void stepSelectMainMenu(String menuItem){
 
-        new MainPage(driver).selectMainMenu(menuItem);
+        new MainPage().selectMainMenu(menuItem);
     }
 
     @Step("выбран пункт подменю {0}")
 
     public void stepSelectSubMenu(String menuItem){
 
-        new MainPage(driver).selectSubmenu(menuItem);
+        new MainPage().selectSubmenu(menuItem);
 
     }
 
