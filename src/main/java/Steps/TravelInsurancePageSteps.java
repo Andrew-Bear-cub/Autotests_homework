@@ -6,7 +6,7 @@ import ru.yandex.qatools.allure.annotations.Step;
 
 import java.util.HashMap;
 
-public class TravelInsurancePageSteps extends BaseSteps {
+public class TravelInsurancePageSteps {
 
 
     @Step("Выбираем сумму страховки")

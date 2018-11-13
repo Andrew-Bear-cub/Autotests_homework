@@ -8,7 +8,7 @@ import ru.yandex.qatools.allure.annotations.Step;
  * Шаги, выполняемые на главной странице
  */
 
-public class MainPageSteps extends BaseSteps{
+public class MainPageSteps {
 
     @Step("выбран пункт главного меню {0}")
 
