@@ -1,6 +1,6 @@
-package Steps;
+package sbertest.steps;
 
-import pages.TravelsAndBuysPage;
+import sbertest.pages.TravelsAndBuysPage;
 import ru.yandex.qatools.allure.annotations.Step;
 
 public class TravelsAndBuysPageSteps {

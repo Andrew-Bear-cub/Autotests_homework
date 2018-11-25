@@ -1,7 +1,6 @@
-package Steps;
+package sbertest.steps;
 
-import org.openqa.selenium.WebElement;
-import pages.TravelInsurancePage;
+import sbertest.pages.TravelInsurancePage;
 import ru.yandex.qatools.allure.annotations.Step;
 
 import java.util.HashMap;

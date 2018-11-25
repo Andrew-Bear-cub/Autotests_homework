@@ -1,6 +1,6 @@
-package pages;
+package sbertest.pages;
 
-import Steps.BaseSteps;
+import sbertest.steps.BaseSteps;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

@@ -1,7 +1,6 @@
-package Steps;
+package sbertest.steps;
 
-import org.openqa.selenium.WebDriver;
-import pages.MainPage;
+import sbertest.pages.MainPage;
 import ru.yandex.qatools.allure.annotations.Step;
 
 /**

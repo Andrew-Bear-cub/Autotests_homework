@@ -1,4 +1,4 @@
-package Steps;
+package sbertest.steps;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;

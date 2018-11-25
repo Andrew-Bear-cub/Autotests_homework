@@ -1,10 +1,10 @@
-import Steps.BaseSteps;
+import sbertest.steps.BaseSteps;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import pages.MainPage;
-import pages.TravelInsurancePage;
-import pages.TravelsAndBuysPage;
+import sbertest.pages.MainPage;
+import sbertest.pages.TravelInsurancePage;
+import sbertest.pages.TravelsAndBuysPage;
 
 import java.util.ArrayList;
 

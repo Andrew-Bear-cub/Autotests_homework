@@ -2,7 +2,7 @@
  * @author Andrey makarov, Aplana
  */
 
-import Steps.BaseSteps;
+import sbertest.steps.BaseSteps;
 import org.junit.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

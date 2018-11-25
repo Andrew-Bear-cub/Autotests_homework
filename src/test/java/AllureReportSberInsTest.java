@@ -1,18 +1,17 @@
-import Steps.BaseSteps;
-import Steps.MainPageSteps;
-import Steps.TravelInsurancePageSteps;
-import Steps.TravelsAndBuysPageSteps;
 import org.junit.Ignore;
+import sbertest.steps.BaseSteps;
+import sbertest.steps.MainPageSteps;
+import sbertest.steps.TravelInsurancePageSteps;
+import sbertest.steps.TravelsAndBuysPageSteps;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import ru.yandex.qatools.allure.annotations.Title;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class AllureReportSberInsTest extends BaseSteps {
 
     @Test
+    @Ignore
     //заголовок теста
     @Title("Сбербанк страхование путешественников")
     public void testInsurance() {

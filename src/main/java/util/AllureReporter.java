@@ -1,9 +1,8 @@
 package util;
 
 
-import Steps.BaseSteps;
+import sbertest.steps.BaseSteps;
 import gherkin.formatter.model.Result;
-import org.junit.runner.notification.Failure;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import ru.yandex.qatools.allure.annotations.Attachment;
