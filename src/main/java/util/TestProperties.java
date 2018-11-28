@@ -11,9 +11,9 @@ public class TestProperties {
 
     private TestProperties() {
         try {
-            properties.load(new FileInputStream(new File("./" + System.getProperty("environment") + ".properties")));
+            properties.load(new FileInputStream(new File("./" + System.getProperty("environment", "environment") + ".properties")));
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Не найден файл environment.properties!!!");
         }
     }
 
