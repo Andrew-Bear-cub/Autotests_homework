@@ -3,6 +3,6 @@ import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = {"src/test/resources"}, glue = {"sbertest/steps"}, plugin = {"util.AllureReporter"})
+@CucumberOptions(features = {"src/test/resources"}, glue = {"yandexmarkettest/steps"}, plugin = {"util.AllureReporter"})
 public class CucumberRunner {
 }

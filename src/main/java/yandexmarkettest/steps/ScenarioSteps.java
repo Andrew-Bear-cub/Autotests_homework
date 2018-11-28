@@ -2,17 +2,13 @@ package yandexmarkettest.steps;
 
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import yandexmarkettest.pages.ExtendSearchPage;
-import yandexmarkettest.pages.SearchResultsPage;
-import yandexmarkettest.pages.YandexMainPage;
-import yandexmarkettest.pages.YandexMarketPage;
 
 public class ScenarioSteps {
     //создаем экземпляры всех страниц
-    YandexMainPage mainPage = new YandexMainPage();
-    YandexMarketPage marketPage = new YandexMarketPage();
-    SearchResultsPage searchResultsPage = new SearchResultsPage();
-    ExtendSearchPage extendSearchPage = new ExtendSearchPage();
+    MainPageSteps mainPage = new MainPageSteps();
+    MarketPageSteps marketPage = new MarketPageSteps();
+    SearchResultsPageSteps searchResultsPage = new SearchResultsPageSteps();
+    ExtendedSearchPageSteps extendSearchPage = new ExtendedSearchPageSteps();
 
     @When("^Перешли на Яндекс.Маркет")
     public void goToMarket(){

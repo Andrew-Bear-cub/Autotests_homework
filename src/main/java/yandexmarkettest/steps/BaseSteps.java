@@ -39,7 +39,7 @@ public class BaseSteps {
         baseUrl = properties.getProperty("homework.url");
         System.out.println("target URL is: " + baseUrl);
         //Устанавливаем неявные ожидания
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         //развернуть на весь экран
         driver.manage().window().maximize();
         driver.get(baseUrl);
