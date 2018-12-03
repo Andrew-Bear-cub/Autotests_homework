@@ -10,14 +10,14 @@ public class ExtendSearchPage {
 
     @FindBy(xpath = "//input[@name='glf-pricefrom-var']")
     WebElement minPriceField;
-    @FindBy(xpath = "//input[@id='glf-7893318-153074']")
+    @FindBy(xpath = "/html/body/div[1]/div[5]/div/div[1]/div[1]/div[2]/div[2]/div/div[1]/div[4]/a/span/label")
     WebElement manufacturerLGCheckbox;
-    @FindBy(xpath = "//input[@id='glf-7893318-153061']")
+    @FindBy(xpath = "/html/body/div[1]/div[5]/div/div[1]/div[1]/div[2]/div[2]/div/div[1]/div[7]/a/span/label")
     WebElement manufacturerSamsungCheckbox;
     //Для экономии кода чекбоксы всех трех производителей описал в одном классе, мне показалось что так правильно :)
-    @FindBy(xpath = "//input[@id='glf-7893318-8455647']")
+    @FindBy(xpath = "/html/body/div[1]/div[5]/div/div[1]/div[1]/div[3]/div[2]/div/div[1]/div[3]/a/span/label")
     WebElement manufacturerBeatsCheckbox;
-    @FindBy(xpath = "//span[text()='Показать подходящие']")
+    @FindBy(xpath = "/html/body/div[1]/div[5]/div/div[1]/div[5]/a[2]")
     WebElement showResultsButton;
 
     public ExtendSearchPage() {
@@ -26,6 +26,7 @@ public class ExtendSearchPage {
 
     //метод для заполнения минимальной суммы
     public void setMinPriceField(int minSum) {
+
         minPriceField.sendKeys(Integer.toString(minSum));
     }
 

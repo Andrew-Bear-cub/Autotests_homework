@@ -21,9 +21,12 @@ public class SearchResultsPageSteps {
     }
 
     @Step
-    public void compareFirstResult() {
-        new SearchResultsPage().compareFirstResult();
+    public void rememberFirstElement() {
+        new SearchResultsPage().remeberFirstElement();
     }
+
+    @Step
+    public void compareFirstResult() {new SearchResultsPage().compareFirstResult();}
 
 
 }

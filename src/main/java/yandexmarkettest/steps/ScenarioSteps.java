@@ -39,4 +39,19 @@ public class ScenarioSteps {
     public void showResults(){
         extendSearchPage.showResults();
     }
+
+    @Then("^Проверили что элементов на странице \"48\"")
+    public void compareResultsCount(){searchResultsPage.compareResultsCount();}
+
+    @Then("^Запомнили первый элемент")
+    public void rememberFirstElement(){searchResultsPage.rememberFirstElement();}
+
+    @When("^Ввели название первого элемента в поиск")
+    public void search(){searchResultsPage.search();}
+
+    @Then("^Проверили что результат поиска совпадает с запомненным значением")
+    public void compareFirstResult(){searchResultsPage.compareFirstResult();}
+
+
+
 }
