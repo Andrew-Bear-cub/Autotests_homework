@@ -8,13 +8,13 @@ import yandexmarkettest.steps.BaseSteps;
 
 public class YandexMarketPage {
 
-    @FindBy(xpath = "//a[@class='link topmenu__link'][text()='Электроника']")
+    @FindBy(xpath = "/html/body/div[1]/div/div[3]/noindex/div/div[2]/a")
     WebElement electronicMenu;
 
-    @FindBy(xpath = "//a[text()='Телевизоры']")
+    @FindBy(xpath = "/html/body/div[1]/div/div[3]/noindex/div/div[2]/div[1]/div/div/div[1]/div/div/div[3]/a[2]")
     WebElement tvies;
 
-    @FindBy(xpath = "//a[text()='Наушники']")
+    @FindBy(xpath = "/html/body/div[1]/div/div[3]/noindex/div/div[2]/div[1]/div/div/div[1]/div/div/div[2]/a[2]")
     WebElement headphones;
 
     public YandexMarketPage() {

@@ -19,7 +19,7 @@ public class SearchResultsPage {
     WebElement searchField;
 
     //Кнопка расширенного поиска
-    @FindBy(xpath = "//span[text()='Все фильтры']")
+    @FindBy(xpath = "//*[@id=\"search-prepack\"]/div/div/div[3]/div/div[3]/div/a")
     WebElement goToExtendSearchButton;
 
     //Общий икспас для результатов поиска (по крайней мере, у меня по этому икспасу нашлось ровно 12 элементов :))
@@ -36,9 +36,7 @@ public class SearchResultsPage {
     }
 
     public void goToExtendedearch() {
-        WebElement searchButton = (new WebDriverWait(BaseSteps.getDriver(), 10))
-                .until(ExpectedConditions.elementToBeClickable(goToExtendSearchButton));
-        searchButton.click();
+        goToExtendSearchButton.click();
 
     }
 
