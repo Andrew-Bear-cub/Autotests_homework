@@ -40,8 +40,14 @@ public class ScenarioSteps {
         extendSearchPage.showResults();
     }
 
-    @Then("^Проверили что элементов на странице \"48\"")
-    public void compareResultsCount(){searchResultsPage.compareResultsCount();}
+    //Перед тем как проверить количество результатов поиска я переключаюсь на вид список, а не плитки, и выставляю
+    // количество результатов поиска на 12. Иначе он показывает телевизоры списком, но 48, а наушники плиткой,
+    // но все сразу, а их всего 19, и тест с наушниками падает(((
+    @Then("^Проверили что элементов на странице \"([^\"]*)\"$")
+
+    public void compareResultsCount(int count){
+        searchResultsPage.switchToList();
+        searchResultsPage.compareResultsCount(count);}
 
     @Then("^Запомнили первый элемент")
     public void rememberFirstElement(){searchResultsPage.rememberFirstElement();}

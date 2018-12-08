@@ -10,14 +10,14 @@ public class ExtendSearchPage {
 
     @FindBy(xpath = "//input[@name='glf-pricefrom-var']")
     WebElement minPriceField;
-    @FindBy(xpath = "/html/body/div[1]/div[5]/div/div[1]/div[1]/div[2]/div[2]/div/div[1]/div[4]/a/span/label")
+    @FindBy(xpath = "//span[@data-filter='glf,7893318,153074']")
     WebElement manufacturerLGCheckbox;
-    @FindBy(xpath = "/html/body/div[1]/div[5]/div/div[1]/div[1]/div[2]/div[2]/div/div[1]/div[7]/a/span/label")
+    @FindBy(xpath = "//span[@data-filter='glf,7893318,153061']")
     WebElement manufacturerSamsungCheckbox;
     //Для экономии кода чекбоксы всех трех производителей описал в одном классе, мне показалось что так правильно :)
-    @FindBy(xpath = "/html/body/div[1]/div[5]/div/div[1]/div[1]/div[3]/div[2]/div/div[1]/div[3]/a/span/label")
+    @FindBy(xpath = "//span[@data-filter='glf,7893318,8455647']")
     WebElement manufacturerBeatsCheckbox;
-    @FindBy(xpath = "/html/body/div[1]/div[5]/div/div[1]/div[5]/a[2]")
+    @FindBy(xpath = "//a[contains(@class, 'show-filtered')]")
     WebElement showResultsButton;
 
     public ExtendSearchPage() {

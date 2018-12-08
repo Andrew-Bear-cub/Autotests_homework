@@ -16,8 +16,8 @@ public class SearchResultsPageSteps {
     }
 
     @Step
-    public void compareResultsCount() {
-        new SearchResultsPage().compareResultsCount();
+    public void compareResultsCount(int count) {
+        new SearchResultsPage().compareResultsCount(count);
     }
 
     @Step
@@ -27,6 +27,9 @@ public class SearchResultsPageSteps {
 
     @Step
     public void compareFirstResult() {new SearchResultsPage().compareFirstResult();}
+
+    @Step
+    public void switchToList() {new SearchResultsPage().switchToList();}
 
 
 }

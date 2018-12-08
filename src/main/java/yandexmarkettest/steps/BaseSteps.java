@@ -55,7 +55,7 @@ public class BaseSteps {
     }
 
     //Метод для проверки наличия элемента на странице
-    public boolean isElementPresent(By by) {
+    public static boolean isElementPresent(By by) {
         try {
             driver.findElement(by);
             return true;

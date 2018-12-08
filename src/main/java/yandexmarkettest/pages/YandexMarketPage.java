@@ -9,13 +9,13 @@ import yandexmarkettest.steps.BaseSteps;
 public class YandexMarketPage {
 
     @FindBy(xpath = "/html/body/div[1]/div/div[3]/noindex/div/div[2]/a")
-    WebElement electronicMenu;
+    private WebElement electronicMenu;
 
     @FindBy(xpath = "/html/body/div[1]/div/div[3]/noindex/div/div[2]/div[1]/div/div/div[1]/div/div/div[3]/a[2]")
-    WebElement tvies;
+    private WebElement tvies;
 
     @FindBy(xpath = "/html/body/div[1]/div/div[3]/noindex/div/div[2]/div[1]/div/div/div[1]/div/div/div[2]/a[2]")
-    WebElement headphones;
+    private WebElement headphones;
 
     public YandexMarketPage() {
         PageFactory.initElements(BaseSteps.getDriver(), this);

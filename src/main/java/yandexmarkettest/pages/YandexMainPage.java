@@ -9,7 +9,7 @@ import yandexmarkettest.steps.BaseSteps;
 public class YandexMainPage {
 
     @FindBy(xpath = "//a[@data-id='market']")
-    WebElement marketLink;
+    private WebElement marketLink;
 
     public YandexMainPage() {
         PageFactory.initElements(BaseSteps.getDriver(), this);
